@@ -1,0 +1,57 @@
+﻿@model EcoVidaCR.Models.Destinos
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">Detalles del Destino</h1>
+  <hr />
+<div class="row">
+    <div class="col-lg-6">
+         <dl class="row">
+        <dt >
+            @Html.DisplayNameFor(model => model.idDestino):
+        </dt>
+        <dd >
+            @Html.DisplayFor(model => model.idDestino)
+        </dd>
+        <dt >
+            @Html.DisplayNameFor(model => model.nombre):
+        </dt>
+        <dd >
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt >
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+        <dd >
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+        <dt >
+            @Html.DisplayNameFor(model => model.ubicacion):
+        </dt>
+        <dd >
+            @Html.DisplayFor(model => model.ubicacion)
+        </dd>
+        <dt >
+            @Html.DisplayNameFor(model => model.aspectos):
+        </dt>
+        <dd >
+            @Html.DisplayFor(model => model.aspectos)
+        </dd>
+    </dl>
+    </div>
+    <div class="col-lg-6">
+         <div>
+            <img src="@Model.rutaURLimg" width="400" height="300" /><br>
+         </div>
+     </div>
+</div>
+<div>
+     <button class="btn btn-primary text-center">
+        @Html.ActionLink("Editar", "Edit", new { id = Model.idDestino},new {@class="text-decoration-none text-light"})
+     </button>
+    |
+    <a asp-action="Index">Regresar</a>
+</div>

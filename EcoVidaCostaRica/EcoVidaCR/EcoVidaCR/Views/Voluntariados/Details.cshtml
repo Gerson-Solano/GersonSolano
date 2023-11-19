@@ -1,0 +1,67 @@
+﻿@model EcoVidaCR.Models.Voluntariados
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body class="fondoDestinos">
+    <h1 class="text-center">Detalles del voluntariado</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <dl class="row">
+                <dt>
+                    @Html.DisplayNameFor(model => model.idVoluntariado)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.idVoluntariado)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.nombreVoluntariado)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.nombreVoluntariado)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.descripcion)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.descripcion)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.idDestino)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.idDestino)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.correo)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.correo)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.telefono)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.telefono)
+                </dd>
+                <dd>
+                    <button class="btn btn-primary">
+                        @Html.ActionLink("Editar", "Edit", new { id = Model.idVoluntariado },new {@class="text-decoration-none text-light"})
+                    </button>
+                    |
+                    <a asp-action="Index" class="btn btn-secondary">Regresar</a>
+                </dd>
+            </dl>
+        </div>
+        <div class="col-md-6 mt-4">
+            <div>
+                <img src="~/img/Usuarios/detalles.jpg" class="img-fluid" height="500" /><br>
+            </div>
+        </div>
+    </div>
+</body>

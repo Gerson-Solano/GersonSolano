@@ -1,0 +1,103 @@
+﻿@model IEnumerable<EcoVidaCR.Models.Voluntariados>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body class="">
+    @if (TempData["Mensaje"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                aria-label="Close"></button>
+            <strong>
+                @TempData["Mensaje"]
+            </strong>
+        </div>
+    }
+
+    <h1 class="text-center">VOLUNTARIADOS</h1>
+
+    @*Se pregunta si el usuario tiene rol de administrador*@
+    @if (User.IsInRole("Administrador"))
+    {
+        <button class="btn btn-success">
+            <a asp-action="Create" class="text-light text-decoration-none">[+] Agregar voluntariado</a>
+        </button>
+    }
+    @foreach (var item in Model)
+    {
+        <div class="container mt-2 pt-4 pb-4 mb-4 bg-gradient-primary" style="background-color: rgba(209, 214, 210, 0.8);">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div>
+                        <img src="@item.rutaURLimg" class=img-fluid /><br>
+                    </div>
+                </div>
+                <div class="col-lg-6 fw-bold">
+                    <div>
+                        <h2 class="text-center">@Html.DisplayFor(modelItem => item.nombreVoluntariado)</h2>
+                    </div>
+                    <div hidden>
+                        @Html.DisplayNameFor(model => model.idVoluntariado)
+                        @Html.DisplayFor(modelItem => item.idVoluntariado)
+                    </div>
+                    <div>
+                        @*@Html.DisplayNameFor(model => model.descripcion):*@
+                        <p class="textJustify">@Html.DisplayFor(modelItem => item.descripcion)</p>
+                    </div>
+                    <div>
+                        <p>
+                            <span>@Html.DisplayNameFor(model => model.nombreDestino): </span>
+                            @Html.DisplayFor(modelItem => item.nombreDestino)
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <span>@Html.DisplayNameFor(model => model.correo): </span>
+                            @Html.DisplayFor(modelItem => item.correo)
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <span> @Html.DisplayNameFor(model => model.telefono): </span>
+                            @Html.DisplayFor(modelItem => item.telefono)
+                        </p>
+                    </div>
+                    @*Se pregunta si el usuario tiene rol de cliente*@
+                    @if (User.IsInRole("Cliente"))
+                    {
+
+                        <td>
+
+                            @Html.ActionLink("Solicitar informacion", "Enviado", new {  id=item.idVoluntariado  },
+                    new { @class = "btn btn-primary glyphicon glyphicon-edit" })
+
+                        </td>
+                    }
+
+                    @if (User.IsInRole("Administrador"))
+                    {
+                        <div class="text-center mt-2">
+                            <button class="btn btn-primary">
+                                @Html.ActionLink("Editar", "Edit", new {  id=item.idVoluntariado  },new {@class="text-decoration-none text-light"})
+                            </button>
+                            |
+                            <button class="btn btn-info">
+                                @Html.ActionLink("Detalles", "Details", new {  id=item.idVoluntariado  },new {@class="text-decoration-none text-light"})
+                            </button>
+                            |
+                            <button class="btn btn-danger">
+                                @Html.ActionLink("Delete", "Delete", new { id=item.idVoluntariado  },new {@class="text-decoration-none text-light"})
+                            </button>
+
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+    }
+</body>

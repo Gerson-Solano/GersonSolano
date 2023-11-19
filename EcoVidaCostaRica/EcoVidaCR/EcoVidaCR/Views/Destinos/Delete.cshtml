@@ -1,0 +1,57 @@
+﻿@model EcoVidaCR.Models.Destinos
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">Eliminar</h1>
+    <hr />
+<h3>¿Estás seguro de eliminar?</h3>
+<div class="row">
+    <div class="col-lg-6">
+    <dl class="row">
+        <dt>
+            @Html.DisplayNameFor(model => model.idDestino):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.idDestino)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt >
+            @Html.DisplayNameFor(model => model.descripcion):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ubicacion):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ubicacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.aspectos):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.aspectos)
+        </dd>
+    </dl>
+    </div>
+    <div class="col-lg-6">
+         <div>
+            <img src="@Model.rutaURLimg" width="400" height="300" /><br>
+         </div>
+     </div>
+</div>
+<div>
+    <form asp-action="Delete">
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary" >Regresar</a>
+    </form>
+</div>

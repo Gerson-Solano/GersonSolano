@@ -1,0 +1,60 @@
+﻿@model EcoVidaCR.Models.Usuarios
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body class="fondoDestinos">
+<h1 class="text-center">Detalles del usuario</h1>
+<hr />
+<div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-4 d-flex align-items-center justify-content-center">
+        <dl class="row">
+            <dt>
+                @Html.DisplayNameFor(model => model.idUsuario)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.idUsuario)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.nombre)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.nombre)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.correo)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.correo)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.password)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.password)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.rol)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.rol)
+            </dd>
+            <dd>
+                <button class="btn btn-primary">
+                     @Html.ActionLink("Editar", "Edit", new {  id = Model.idUsuario},new {@class="text-decoration-none text-light"})
+                </button>
+                |
+                <a asp-action="Index" class="btn btn-secondary">Regresar</a>
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-6">
+        <div>
+            <img src="~/img/Usuarios/detalles.jpg" width="400" height="300" /><br>
+        </div>
+    </div>
+</div>
+</body>

@@ -1,0 +1,55 @@
+﻿@model EcoVidaCR.Models.Usuarios
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body class="fondoDestinos">
+<h1 class="text-center">Eliminar</h1>
+<hr />
+<h5 class="text-center">¿Estás seguro de eliminar el siguiente usuario?</h5>
+<div class="row">
+    <div class=col-md-4></div>
+    <div class="col-md-4">
+        <dl class="row">
+            <dt>
+                @Html.DisplayNameFor(model => model.idUsuario)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.idUsuario)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.nombre)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.nombre)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.correo)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.correo)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.password)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.password)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.rol)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.rol)
+            </dd>
+            <dd>
+                <form asp-action="Delete">
+                    <input type="submit" value="Delete" class="btn btn-danger" /> |
+                    <a asp-action="Index" class="btn btn-secondary" >Back to List</a>
+                </form>
+            </dd>
+        </dl>
+    </div>
+    <div class=col-md-4></div>
+</div>
+</body>
