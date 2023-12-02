@@ -1,7 +1,12 @@
+
+using SalesSystem.IOC;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.InjectDependence(builder.Configuration);
 
 var app = builder.Build();
 
