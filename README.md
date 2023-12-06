@@ -6,7 +6,7 @@ Concise description of the overall purpose of the repository.
 
 ### 1. C# .Net Project / EcovidaCR
 
-Brief description of the C# .Net project, utilizing Entity Framework and SQL Server. Include the purpose, main features, and any other relevant information.
+EcovidaCR is a project dedicated to connect tourists with places where volunteering is needed to support and improve the environment, this approach benefits both the tourist and the entity or place that needs the support.
 
 #### Technologies Used
 - C# .Net
@@ -16,7 +16,7 @@ Brief description of the C# .Net project, utilizing Entity Framework and SQL Ser
 
 ### 2. PHP Academy Project
 
-Brief description of the PHP project, utilizing MySQL. Include the purpose, main features, and any other relevant information.
+The academy project is to provide a resource where you can have an overview of the courses, teachers and students participating in the academy. 
 
 #### Technologies Used
 - PHP
@@ -25,7 +25,7 @@ Brief description of the PHP project, utilizing MySQL. Include the purpose, main
 
 ### 3. JavaScript Project
 
-Brief description of the JavaScript project, utilizing MySQL and Bootstrap. Include the purpose, main features, and any other relevant information.
+The academy project is to provide a resource where you can have an overview of the courses, teachers and students participating in the academy. 
 
 #### Technologies Used
 - JavaScript
@@ -34,7 +34,7 @@ Brief description of the JavaScript project, utilizing MySQL and Bootstrap. Incl
 
 ### 4. Java NotesApi Project
 
-Brief description of the Java project, utilizing Spring Boot, Maven, Hibernate, and Tomcat as an API, with MySQL as the database.
+It is based on an api to be able to send notes, archive them, as well as delete and edit them.
 
 #### Technologies Used
 - Java
