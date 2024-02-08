@@ -1,0 +1,19 @@
+---
+interface Props {
+    src: string;
+    alt: string;
+}
+
+const { src, alt } = Astro.props;
+---
+
+<img src={src} alt={alt} class="half-screen-image" />
+<style>
+    .half-screen-image {
+        grid-area: image;
+        width: 50%;
+        height: 100vh; /* adjust height as needed */
+        object-fit: cover; /* adjust fit behaviour if needed */
+        display: grid;
+    }
+</style>
